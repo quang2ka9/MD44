@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .transaction-form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="date"],
+    input[type="text"],
+    input[type="number"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #495057;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    input[type="date"]:focus,
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    .invalid-feedback {
+        color: #dc3545;
+        margin-top: 5px;
+        font-size: 14px;
+        display: none;
+    }
+    .invalid-feedback.active {
+        display: block;
+    }
+</style>
+<body>
+
+
+
+<form  action="/student/create" method="POST" enctype="multipart/form-data" class="transaction-form" >
+<h1>Thêm học viên</h1>
+    <div class="form-group">
+        <label for="name">Tên</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="class">Lớp</label>
+        <input type="text" id="practicePoints" name="class" required>
+    </div>
+
+    <div class="form-group">
+        <label for="evaluate">Điểm thực hành</label>
+        <input type="text" id="codeStudent" name="codeStudent" required>
+    </div>
+
+    <div class="form-group">
+        <label for="theoreticalPoint">Điểm thực hành</label>
+        <input type="number" id="theoreticalPoint" name="theoreticalPoint" min = 0 required>
+    </div>
+
+    <div class="form-group">
+        <label for="practicePoints">Điểm lý thuyết</label>
+        <input type="number" id="practicePoints" name="practicePoints" min = 0 required>
+    </div>
+
+
+    <div class="form-group">
+        <label for="evaluate">Đánh giá</label>
+        <input type="text" id="evaluate" name="evaluate" required>
+    </div>
+
+
+    <div class="form-group">
+        <label for="status">Mô tả</label>
+        <textarea id="status" name="status" required></textarea >
+<!--        <input type="text" id="status" name="status" required>-->
+    </div>
+
+<!--    <label for="description">Mô tả:</label>-->
+<!--    <textarea id="description" name="description" required></textarea>-->
+
+    <button type="submit">Gửi</button>
+    <a href="/student/list"  style="text-decoration: none">Thoát</a>
+</form>
+
+</body>
+</html>

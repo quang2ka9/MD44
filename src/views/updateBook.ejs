@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+       a {
+           background-color: #6061bd;
+           color: #fff;
+           border: none;
+           padding: 10px 20px;
+           font-size: 16px;
+           border-radius: 5px;
+           cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+<h1>Sửa học viên</h1>
+<form action="/student/update" method="POST" enctype="multipart/form-data">
+
+    <input type="hidden" class="form-control" id="id" name="id" value="<%=student.id%>">
+
+
+    <label for="name">Description:</label>
+    <input type="text" id="name" name="name" value="<%=student.name%>">
+
+    <label for="codeStudent">codeStudent:</label>
+    <input type="text" id="title" name="codeStudent" value="<%=student.codeStudent%>">
+
+    <label for="email">theoreticalPoint:</label>
+    <input type="number" id="theoreticalPoint" name="theoreticalPoint" min=0 value="<%=student.theoreticalPoint%>">
+
+    <label for="email">Description:</label>
+    <input type="number" id="practicePoints" name="practicePoints" min=0 value="<%=student.practicePoints%>">
+
+    <label for="status">status:</label>
+    <input type="text" id="status" name="status" value="<%=student.status%>">
+
+    <label for="evaluate">evaluate:</label>
+    <input type="text" id="evaluate" name="evaluate" value="<%=student.evaluate%>">
+
+    <label for="class">class:</label>
+    <input type="text" id="class" name="class" value="<%=student.class%>">
+
+    <input type="submit" value="Save">
+    <a href="/student/list" style="text-decoration: none">Cancel</a>
+</form>
+</body>
+</html>
